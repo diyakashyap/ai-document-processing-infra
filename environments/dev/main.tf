@@ -124,7 +124,6 @@ module "ecs" {
 
 module "vpc_endpoints" {
   source = "../../modules/vpc-endpoints"
-
   project_name             = var.project_name
   environment              = var.environment
   aws_region               = var.aws_region
