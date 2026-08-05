@@ -27,9 +27,7 @@ output "private_db_subnet_ids" {
   ]
 }
 
-output "private_route_table_id" {
-  value = aws_route_table.private.id
-}
+
 
 output "private_route_table_id" {
   description = "Private Route Table ID"
