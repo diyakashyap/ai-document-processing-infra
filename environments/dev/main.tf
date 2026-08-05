@@ -121,3 +121,18 @@ module "ecs" {
     }
   ]
 }
+
+module "vpc_endpoints" {
+  source = "../../modules/vpc-endpoints"
+
+  project_name             = var.project_name
+  environment              = var.environment
+  aws_region               = var.aws_region
+  vpc_id                   = module.vpc.vpc_id
+  vpc_cidr                 = var.vpc_cidr
+
+  private_subnet_ids       = module.vpc.private_app_subnet_ids
+  private_route_table_id   = module.vpc.private_route_table_id
+
+  common_tags = var.common_tags
+}

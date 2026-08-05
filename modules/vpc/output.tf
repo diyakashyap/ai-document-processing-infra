@@ -26,3 +26,12 @@ output "private_db_subnet_ids" {
     if !var.subnets[key].public && can(regex("private-db", key))
   ]
 }
+
+output "private_route_table_id" {
+  value = aws_route_table.private.id
+}
+
+output "private_route_table_id" {
+  description = "Private Route Table ID"
+  value       = aws_route_table.private.id
+}
