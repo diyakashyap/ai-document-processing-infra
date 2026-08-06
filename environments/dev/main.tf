@@ -108,16 +108,24 @@ module "ecs" {
       value = module.s3.bucket_name
     },
     {
-      name  = "DATABASE_HOST"
+      name  = "MYSQL_HOST"
       value = module.rds.db_endpoint
     },
     {
-      name  = "DATABASE_NAME"
+      name  = "MYSQL_PORT"
+      value = "3306"
+    },
+    {
+      name  = "MYSQL_DATABASE"
       value = module.rds.db_name
     },
     {
-      name  = "DATABASE_USERNAME"
+      name  = "MYSQL_USER"
       value = var.database_username
+    },
+    {
+      name  = "MYSQL_PASSWORD"
+      value = var.database_password
     }
   ]
 }
